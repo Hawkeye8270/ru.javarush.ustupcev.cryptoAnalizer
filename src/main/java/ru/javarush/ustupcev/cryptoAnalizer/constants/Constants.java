@@ -1,5 +1,7 @@
 package ru.javarush.ustupcev.cryptoAnalizer.constants;
 
+import java.io.File;
+
 public class Constants {
 
     private static final String RUS = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ";
@@ -8,6 +10,8 @@ public class Constants {
     private static final String SPEC = "~!@#$%^&*()_+{}:\"<>?-=[];'.,/";
 
     public static final String ALPHABET = RUS + ENG + RUS.toLowerCase() + ENG.toLowerCase() + NUM + SPEC;
+
+    public static final String TXT_FOLDER = System.getProperty("user.dir") + File.separator + "text" + File.separator;
 
 
 

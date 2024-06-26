@@ -1,8 +1,8 @@
 package ru.javarush.ustupcev.cryptoAnalizer;
 
-import exceptions.AppException;
 import ru.javarush.ustupcev.cryptoAnalizer.controllers.MainController;
 import ru.javarush.ustupcev.cryptoAnalizer.entity.Result;
+import ru.javarush.ustupcev.cryptoAnalizer.exceptions.AppException;
 
 import java.util.Arrays;
 
@@ -15,12 +15,15 @@ public class Application {
     }
 
     public Result run(String[] args) {
+        // encode text.txe encode.txt 12
         if (args.length > 0) {
-            String action = args[0];
-            String[] parametrs = Arrays.copyOfRange(args, 1, args.length);
-        Result result = mainController.doAction(action, parametrs); }
+            String action = args[0];        // action => encode
+            String[] parametrs = Arrays.copyOfRange(args, 1, args.length);  // parameters  => text.txe encode.txt 12
+        return mainController.doAction(action, parametrs); }
 
-        throw new AppException();
+        else {
+            throw new AppException("no args");
+        }
     }
 }
 
